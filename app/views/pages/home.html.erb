@@ -1,12 +1,37 @@
 <%= stylesheet_link_tag('layout/home_layout') %>
 
+<div class="container-left">
+    <h1>Index</h1>
+</div>
 
-<div class="container-home">
-    <h1>ZG-Software BLOG</h1>
+<div class="container-mid">
+    <h1>ZG-Software</h1>
     <p>Fique por dentro das noticias, atualizações e dicas</p>
 
 
-    <h2>
+    <!-- <h2>
         <%= link_to "Feed de Postagens", posts_path%>
-    </h2>
+    </h2> -->
+
+    <div id="posts" class="posts-container">
+        <% @posts.each do |post| %>
+            <%= render partial: 'posts/post', locals: { post: post } %>
+        <% end %>
+    </div>
+    
+
 </div>
+
+<div class="container-right">
+    
+    <div class="profile">
+        <img src="https://icongr.am/clarity/computer.svg?size=50&color=72bada" alt="">
+        <h3>Profile</h3>
+        
+    </div>
+
+    <div class="contact">
+        <h3>Contact</h3>
+    </div>
+</div>
+
