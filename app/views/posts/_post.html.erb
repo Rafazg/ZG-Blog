@@ -11,7 +11,12 @@
   </p>
 
   <p>
-    <strong> Data de Criação:</strong> <%= post.created_at.strftime('%d/%m/%Y %H:%M:%S') %>
+    Data de Criação: <%= post.created_at.strftime('%d/%m/%Y %H:%M:%S') %>
+    
+  </p>
+
+  <p>
+    Tags: <%= post.tags.map(&:name).join(', ')%>
   </p>
 
   <p>

@@ -18,6 +18,11 @@
     <%= form.text_field :title %>
   </div>
 
+  <div>
+    <%= form.label :tag_list, "Tags (separadas por vírgulas)" %>
+    <%= form.text_field :tag_list %>
+  </div>
+
   <div >
     <%= form.label :body, "Body:", style: "display: block"%>
     <%= form.text_area :body %>

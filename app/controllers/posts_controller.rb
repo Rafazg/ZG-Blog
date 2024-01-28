@@ -23,6 +23,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
+    tag_names = params[:post][:tag_list].split(",")
+    @post.tags = tag_names.map { |name| Tag.find_or_create_by(name: name.strip) }
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -36,6 +39,12 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+
+    @post = Post.find(params[:id])
+
+    tag_names = params[:post][:tag_list].split(",") # separa as tags por vírgulas
+    @post.tags = tag_names.map { |name| Tag.find_or_create_by(name: name.strip) }
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
