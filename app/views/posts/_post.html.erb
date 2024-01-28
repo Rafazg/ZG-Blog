@@ -5,10 +5,14 @@
 
     <h3><%= post.title %></h3>
 
+    <div class="date-container">
+      <p>
+        <%= post.created_at.strftime('%d/%m/%Y') %>
+      </p>
+    </div>
 
     <div class="resume-container">
       <p>
-        <strong>Resumo:</strong>
         <%= post.resume %>
       </p>
     </div>
@@ -16,23 +20,17 @@
 
     <div class="body-container">
       <p>
-        <strong>Body:</strong>
         <%= post.body %>
       </p>
     </div>
 
 
-    <div class="date-container">
-      <p>
-        Data de Criação: <%= post.created_at.strftime('%d/%m/%Y') %>
-      </p>
-    </div>
-
-
     <div class="tags-container">
-      <p>
-        Tags: <%= post.tags.map(&:name).join(', ') %>
-      </p>
+      <% post.tags.each do |tag| %>
+        <div class="tag">
+          <%= tag.name %>
+        </div>
+      <% end %>
     </div>
 
 
