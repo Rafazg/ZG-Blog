@@ -13,6 +13,24 @@ body{
 
 }
 
+.search-icon span{
+    font-family: fantasy;
+    color: rgb(235 235 235)
+}
+.search-icon{
+    margin-bottom: 10px;
+}
+.search-container{
+    margin-top: 25px;
+}
+.search-container input{
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 500px;
+    height: 35px;
+}
+
 .container-mid{
     display: flex;
     overflow: scroll;
@@ -22,6 +40,7 @@ body{
     width: 100%;
     height: 100vh;
     border: 5px solid gray;
+    margin-top: 40px;
 
 }
 
