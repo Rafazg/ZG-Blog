@@ -108,6 +108,12 @@ body{
     width: 100px;
     box-shadow: 6px 4px 2px 0px #858585
 }
+
+
+.link01:hover, .link02:hover, .link03:hover, .link04:hover{
+        box-shadow: 6px 4px 2px 0px #bcbcbc;
+        border: 2px solid #bcbcbc;;
+    }
 li{
     list-style: none;
 }
