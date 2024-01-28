@@ -1,27 +1,45 @@
-<%= stylesheet_link_tag('layout/posts_layouts') %>
 
-<div id="<%= dom_id post %>" class="post-content">
-  <h3><%= post.title %></h3>
+  <%= stylesheet_link_tag('layout/posts_layouts') %>
+<%= link_to post_path(post) do %>
+  <div id="<%= dom_id post %>" class="post-content">
 
-  <p>
-    <strong>Resumo:</strong>
-    <%= post.resume %>
-  </p>
+    <h3><%= post.title %></h3>
 
-  <p>
-    <strong>Body:</strong>
-    <%= post.body %>
-  </p>
 
-  <p>
-    Data de Criação: <%= post.created_at.strftime('%d/%m/%Y %H:%M:%S') %>
-  </p>
+    <div class="resume-container">
+      <p>
+        <strong>Resumo:</strong>
+        <%= post.resume %>
+      </p>
+    </div>
 
-  <p>
-    Tags: <%= post.tags.map(&:name).join(', ') %>
-  </p>
 
-  <p>
-    <%= link_to "Show this post", post %>
-  </p>
-</div>
+    <div class="body-container">
+      <p>
+        <strong>Body:</strong>
+        <%= post.body %>
+      </p>
+    </div>
+
+
+    <div class="date-container">
+      <p>
+        Data de Criação: <%= post.created_at.strftime('%d/%m/%Y') %>
+      </p>
+    </div>
+
+
+    <div class="tags-container">
+      <p>
+        Tags: <%= post.tags.map(&:name).join(', ') %>
+      </p>
+    </div>
+
+
+  </div>
+<% end %>  
+
+
+
+
+
