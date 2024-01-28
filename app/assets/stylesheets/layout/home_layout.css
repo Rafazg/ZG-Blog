@@ -50,7 +50,37 @@ body{
     width: 100%;
     height: 400px;
     background-color: rgb(24 24 24);
+    gap: 10px;
 }
+.profile h3{
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+}
+
+.profile p{
+    text-align: center;
+    font-size: 13px;
+}
+
+.profile-image{
+    overflow: hidden;
+    border: 2px solid rgb(61, 61, 61);
+    border-radius: 10px;
+    box-shadow: 6px 4px 2px 0px #72bada;
+    margin-top: 15px;
+}
+
+.stack-icons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stack01, .stack02{
+    display: flex;
+
+}
+
 .icons-contact{
     display: flex;
     justify-content: center;
@@ -71,7 +101,7 @@ body{
     display: flex;
     flex-direction: column;
     margin-left: 15px;
-    gap: 8px;
+    gap: 10px;
 }
 .link01, .link02, .link03, .link04{
     border: 2px solid gray;
