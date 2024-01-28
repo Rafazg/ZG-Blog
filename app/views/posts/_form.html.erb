@@ -19,8 +19,8 @@
   </div>
 
   <div>
-    <%= form.label :tag_list, "Tags (separadas por vírgulas)" %>
-    <%= form.text_field :tag_list %>
+    <%= form.label :resume, "Resumo" %>
+    <%= form.text_area :resume %>
   </div>
 
   <div >
@@ -28,6 +28,11 @@
     <%= form.text_area :body %>
   </div>
 
+  <div>
+    <%= form.label :tag_list, "Tags (separadas por vírgulas)" %>
+    <%= form.text_field :tag_list %>
+  </div>
+  
   <div>
     <%= form.submit class: "btn btn-primary" %>
   </div>

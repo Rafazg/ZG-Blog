@@ -1,9 +1,12 @@
 <%= stylesheet_link_tag('layout/posts_layouts') %>
 
 <div id="<%= dom_id post %>" class="post-content">
+  <h3><%= post.title %></h3>
 
-    <h3><%= post.title %></h3>
-
+  <p>
+    <strong>Resumo:</strong>
+    <%= post.resume %>
+  </p>
 
   <p>
     <strong>Body:</strong>
@@ -12,11 +15,10 @@
 
   <p>
     Data de Criação: <%= post.created_at.strftime('%d/%m/%Y %H:%M:%S') %>
-    
   </p>
 
   <p>
-    Tags: <%= post.tags.map(&:name).join(', ')%>
+    Tags: <%= post.tags.map(&:name).join(', ') %>
   </p>
 
   <p>
