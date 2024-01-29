@@ -2,6 +2,16 @@
 
 <div class="container-left">
     <h1>Tags</h1>
+
+    <div class="tags-leftContainer">
+        <% Tag.all.each do |tag| %>
+            <div class="tag">
+                <%= link_to tag_posts_path(tag), class: 'tag-link' do %>
+                    <%= tag.name %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
 </div>
 
 <div class="container-mid">
@@ -58,7 +68,6 @@
             </div>
                 
         </div>
-        <p>Don't get attached to languages, they are just tools</p>
     </div>
 
     <div class="icons-contact">
@@ -88,3 +97,24 @@
         </div>
     </div>
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).on("click", ".tag-link", function(e) {
+      e.preventDefault();
+      var url = $(this).attr("href");
+  
+      $.ajax({
+        url: url,
+        dataType: "script",
+        success: function() {
+          console.log("Posts carregados com sucesso!");
+        },
+        error: function() {
+          console.error("Erro ao carregar os posts.");
+        }
+      });
+    });
+  </script>

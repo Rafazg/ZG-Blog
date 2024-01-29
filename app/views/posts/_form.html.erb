@@ -13,19 +13,23 @@
       </ul>
     </div>
   <% end %>
- 
-  <div class="title">
-    <%= form.label :title, "Title:", style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div class="resume">
-    <%= form.label :resume, "Resumo" %>
-    <%= form.text_area :resume %>
-  </div>
+<div class="resume-container">
+
+    <div class="title">
+      <%= form.label :title, "Title:", style: "display: block" %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="resume">
+      <%= form.label :resume, "Resumo" %>
+      <%= form.text_area :resume %>
+    </div>
+
+</div>
 
   <div class="body">
-    <%= form.label :body, "Body:", style: "display: block"%>
+    <%= form.label :body, "Escreva seu Post", style: "display: block"%>
     <%= form.rich_text_area :body %>
   </div>
   
@@ -35,7 +39,7 @@
     <%= form.text_field :tag_list %>
   </div>
   
-  <div>
+  <div class="btn-close">
     <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
