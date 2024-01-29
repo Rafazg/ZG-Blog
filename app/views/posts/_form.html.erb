@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag('base/typography') %>
+<%= stylesheet_link_tag('layout/forms_layout.css') %>
 
 <%= form_with(model: @post, local: true) do |form| %>
   <% if post.errors.any? %>
@@ -13,20 +14,21 @@
     </div>
   <% end %>
  
-  <div>
+  <div class="title">
     <%= form.label :title, "Title:", style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="resume">
     <%= form.label :resume, "Resumo" %>
     <%= form.text_area :resume %>
   </div>
 
-  <div >
+  <div class="body">
     <%= form.label :body, "Body:", style: "display: block"%>
-    <%= form.text_area :body %>
+    <%= form.rich_text_area :body %>
   </div>
+  
 
   <div>
     <%= form.label :tag_list, "Tags (separadas por vírgulas)" %>

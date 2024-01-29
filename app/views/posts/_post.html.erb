@@ -1,7 +1,11 @@
+<%= stylesheet_link_tag('layout/posts_layouts') %>
 
-  <%= stylesheet_link_tag('layout/posts_layouts') %>
 <%= link_to post_path(post) do %>
-  <div id="<%= dom_id post %>" class="post-content">
+  <% if controller.action_name == 'show' %>
+    <div id="<%= dom_id post %>" class="post-show">
+  <% else %>
+    <div id="<%= dom_id post %>" class="post-content">
+  <% end %>
 
     <h3><%= post.title %></h3>
 
@@ -17,13 +21,13 @@
       </p>
     </div>
 
-
-    <div class="body-container">
-      <p>
-        <%= post.body %>
-      </p>
-    </div>
-
+    <% if controller.action_name == 'show' %>
+      <div class="body-container">
+        <p>
+          <%= post.body %>
+        </p>
+      </div>
+    <% end %>
 
     <div class="tags-container">
       <% post.tags.each do |tag| %>
@@ -31,11 +35,10 @@
           <%= tag.name %>
         </div>
       <% end %>
+
     </div>
-
-
   </div>
-<% end %>  
+<% end %>
 
 
 
