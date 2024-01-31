@@ -48,3 +48,41 @@ main{
 .description p{
     font-family: sans-serif;
 }
+
+.carousel-item img{
+    width: 600px;
+}
+
+.geral-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+.projects-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    background-color: rgb(24 24 24);
+    border-radius: 1rem;
+}
+
+.carousel-control-prev{
+    left: -100px;
+}
+
+.carousel-control-next{
+    right: -100px;
+}
+
+.carousel-indicators{
+    bottom: -50px;
+
+}
+
+.carousel-caption{
+    bottom: -1.75rem;
+}
