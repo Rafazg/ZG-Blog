@@ -10,5 +10,6 @@
 //= link layout/about_layout.css
 //= link layout/navbar_layout.css
 //= link layout/forms_layout.css
-// = link layout/signUp_layout.css
+//= link layout/signUp_layout.css
+//= link layout/signIn_layout.css
 //= link state/hover_styles.css
