@@ -23,10 +23,15 @@
         
         <input type="text" placeholder="Search keywords">
         <!-- <p>Fique por dentro das noticias, atualizações e dicas</p>  -->
+        <% if current_user && current_user.admin? %>
         <%= link_to "Publicar ", new_post_path %>
+        <% else %>
+
+        <% end %>
     </div>
     
 
+    
     <div id="posts" class="posts-container">
         <% @posts.each do |post| %>
             <%= render partial: 'posts/post', locals: { post: post } %>

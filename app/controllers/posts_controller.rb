@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :authenticate_admin!
 
   # GET /posts or /posts.json
   def index
@@ -22,19 +22,23 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    if current_user.admin?
+      @post = Post.new(post_params)
 
-    tag_names = params[:post][:tag_list].split(",")
-    @post.tags = tag_names.map { |name| Tag.find_or_create_by(name: name.strip) }
+      tag_names = params[:post][:tag_list].split(",")
+      @post.tags = tag_names.map { |name| Tag.find_or_create_by(name: name.strip) }
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
+          format.json { render :show, status: :created, location: @post }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to root_path, alert: "Você não tem permissão para criar posts."
     end
   end
 
