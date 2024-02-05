@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   def create
     if current_user.admin?
       @post = Post.new(post_params)
+      @post.user = current_user
 
       tag_names = params[:post][:tag_list].split(",")
       @post.tags = tag_names.map { |name| Tag.find_or_create_by(name: name.strip) }
