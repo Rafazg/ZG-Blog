@@ -1,12 +1,35 @@
-<p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag('layout/show_layout') %>
 
-<%= render @post %>
+<div class="container-show">
 
 
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-  <%= button_to "Destroy this post", @post, method: :delete %>
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @post %>
+
+
+
+  <div>
+    <% if current_user && current_user.admin? %>
+    <%= link_to "Edit this post", edit_post_path(@post) %> |
+    <%= button_to "Destroy this post", @post, method: :delete %>
+    <% else %>
+
+    <% end %>
+    
+
+  </div>
+
+  <div class="container-comments custom-style">
+    <%= render 'comments/form', post: @post%>
+    <% @comments.each do |comment| %>
+      <%= render 'comments/comment', post: @post, comment: comment %>
+    <% end %>
+  </div>
+
+
+
+
 
 </div>

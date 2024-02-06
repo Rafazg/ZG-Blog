@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, only: [:show]
 
   # GET /posts or /posts.json
   def index
@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   # GET /posts/new
@@ -24,11 +25,10 @@ class PostsController < ApplicationController
   def create
     if current_user.admin?
       @post = Post.new(post_params)
-      @post.user = current_user
-
+  
       tag_names = params[:post][:tag_list].split(",")
       @post.tags = tag_names.map { |name| Tag.find_or_create_by(name: name.strip) }
-
+  
       respond_to do |format|
         if @post.save
           format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
