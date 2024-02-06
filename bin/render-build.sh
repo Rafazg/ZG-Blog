@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-chmod u+x bin/rails
+
 # exit on error
 set -o errexit
 
