@@ -25,7 +25,7 @@ gem "jbuilder"
 
 gem 'devise'
 
-gem 'pg', ">= 1.5.4"
+gem 'pg'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
