@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   
   resources :posts do
     resources :comments
   end
+
+
+
+
 
 
   devise_for :users, controllers: {
@@ -13,8 +15,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     
   }
-
-
+  
   get 'about', to: 'pages#about'
 
   get "up" => "rails/health#show", as: :rails_health_check
