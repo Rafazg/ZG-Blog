@@ -1,5 +1,6 @@
-:%s/\r//g
+
 # exit on error
+
 set -o errexit
 
 bundle install
