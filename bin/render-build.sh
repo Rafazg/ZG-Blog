@@ -8,6 +8,6 @@ bundle install
 ./bin/rails assets:clean
 bundle exec rake db:migrate
 
-sudo service postgresql start
+service postgresql start
 
 psql -U mysite -d mysite_6737 -f users_202402131143.sql
