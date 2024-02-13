@@ -109,6 +109,7 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    ffi (1.16.3)
     ffi (1.16.3-x86-mingw32)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -155,7 +156,10 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.16.2-x86-mingw32)
       racc (~> 1.4)
+    nokogiri (1.16.2-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.5.4)
     pg (1.5.4-x86-mingw32)
     psych (5.1.2)
       stringio
@@ -237,8 +241,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2024.1)
-      tzinfo (>= 1.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -257,6 +259,7 @@ GEM
 
 PLATFORMS
   x86-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
