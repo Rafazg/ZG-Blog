@@ -5,6 +5,9 @@ main{
     margin: 0 100px;
 }
 
+form :first-child {
+    margin-top: 0px;
+}
 
 @media (max-width: 900px) {
     
