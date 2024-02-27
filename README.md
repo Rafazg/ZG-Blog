@@ -16,6 +16,6 @@
 
 ## Demonstração
 
-![alt text](https://github.com/Rafazg/ZG-Blog/screenshoot.png)
+![alt text](https://github.com/Rafazg/ZG-Blog/blob/main/screenshoot.png)
 
 
