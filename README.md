@@ -14,7 +14,7 @@
 - Comentar nas minhas postagens
 - Acompanhar notícias e dicas sobre desenvolvimento e tecnologia
 
-## Demonstração
+## Screenshot 
 
 ![alt text](https://github.com/Rafazg/ZG-Blog/blob/main/screenshoot.png)
 
