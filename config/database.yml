@@ -82,3 +82,4 @@ production:
   database: blog_ruby_production
   username: blog_ruby
   password: <%= ENV["BLOG_RUBY_DATABASE_PASSWORD"] %>
+  host: dpg-cn1uop0cmk4c73fivfng-a
