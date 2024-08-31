@@ -79,7 +79,7 @@ test:
 #
 production:
   <<: *default
-  database: blog_ruby_production
-  username: blog_ruby
-  password: <%= ENV["BLOG_RUBY_DATABASE_PASSWORD"] %>
-  host: dpg-cn1uop0cmk4c73fivfng-a
+  database: rails_blog_nvh9
+  username: rails_blog_nvh9_user
+  password: <%= ENV["RAILS_BLOG_DATABASE_PASSWORD"] %>
+  host: dpg-cr9pdcjv2p9s73bc0je0-a

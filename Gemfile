@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "3.3.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
@@ -36,7 +36,9 @@ gem "pg", "~> 1.1"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data'
 gem "tzinfo-data", platforms: %i[jruby ]
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
