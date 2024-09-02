@@ -80,11 +80,5 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  database: rails_blog_nvh9
-  username: rails_blog_nvh9_user
-  password: 9wOFyEskf60zhSGJAaZ8jJi9HZPfBPoh
-  host: dpg-cr9pdcjv2p9s73bc0je0-a
-  port: 5432
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
