@@ -3,6 +3,7 @@
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
 
+
 //= link base/typography.css
 //= link layout/application_layout.css
 //= link layout/posts_layouts.css

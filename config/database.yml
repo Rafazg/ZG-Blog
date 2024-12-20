@@ -21,9 +21,15 @@ default: &default
   username: rails_blog_nvh9_user
   password: 9wOFyEskf60zhSGJAaZ8jJi9HZPfBPoh
 
+
+  
+
 development:
   <<: *default
+  host: localhost
   database: rails_blog_nvh9
+  username: rails_blog_nvh9_user
+  password: 9wOFyEskf60zhSGJAaZ8jJi9HZPfBPoh
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.

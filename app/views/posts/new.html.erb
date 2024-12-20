@@ -5,12 +5,10 @@
 
   <%= render "form", post: @post %>
 
-  <br>
-
   <div>
     <%= link_to posts_path do %>
       <%= image_tag("back.png", onmouseover: "this.src='#{asset_path('backhover.png')}'", onmouseout: "this.src='#{asset_path('back.png')}'") %>
     <% end %>   
   </div>
 
-</div>++
+</div>
