@@ -16,7 +16,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: localhost #dpg-cr9pdcjv2p9s73bc0je0-a
+  host: dpg-cr9pdcjv2p9s73bc0je0-a
   port: 5432
   username: rails_blog_nvh9_user
   password: 9wOFyEskf60zhSGJAaZ8jJi9HZPfBPoh
