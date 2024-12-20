@@ -16,14 +16,20 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: dpg-cr9pdcjv2p9s73bc0je0-a
+  host: localhost #dpg-cr9pdcjv2p9s73bc0je0-a
   port: 5432
   username: rails_blog_nvh9_user
   password: 9wOFyEskf60zhSGJAaZ8jJi9HZPfBPoh
 
+
+  
+
 development:
   <<: *default
+  host: localhost
   database: rails_blog_nvh9
+  username: rails_blog_nvh9_user
+  password: 9wOFyEskf60zhSGJAaZ8jJi9HZPfBPoh
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.

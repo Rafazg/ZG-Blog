@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag('base/typography') %>
 <%= stylesheet_link_tag('layout/forms_layout.css') %>
 
+
 <%= form_with(model: @post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
