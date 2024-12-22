@@ -1,46 +1,52 @@
-<%= stylesheet_link_tag('base/typography') %>
-<%= stylesheet_link_tag('layout/forms_layout.css') %>
+<%= stylesheet_link_tag('base/typography') %> <%=
+stylesheet_link_tag('layout/forms_layout.css') %> <%= form_with(model: @post,
+local: true) do |form| %> <% if post.errors.any? %>
+<div style="color: red">
+  <h2>
+    <%= pluralize(post.errors.count, "error") %> prohibited this post from being
+    saved:
+  </h2>
 
-
-<%= form_with(model: @post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% post.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
 <div class="resume-container">
+  <div class="image-upload">
+    <%= form.label :image, "Escolha uma imagem para o post", style: "display:
+    block" %> <%= form.file_field :image, accept: "image/*" %>
+  </div>
 
-    <div class="title">
-      <%= form.label :title, "Title:", style: "display: block" %>
-      <%= form.text_field :title %>
-    </div>
+  <% if @post.image.attached? %>
+  <div class="current-image">
+    <p>Imagem atual:</p>
+    <%= image_tag @post.image, class: "current-post-image", alt: "Imagem do post" %>
+  </div>
+<% end %>
 
-    <div class="resume">
-      <%= form.label :resume, "Resumo" %>
-      <%= form.text_area :resume %>
-    </div>
+  <div class="title">
+    <%= form.label :title, "Title:", style: "display: block" %> <%=
+    form.text_field :title %>
+  </div>
 
+  <div class="resume">
+    <%= form.label :resume, "Resumo" %> <%= form.text_area :resume %>
+  </div>
 </div>
 
-  <div class="body">
-    <%= form.label :body, "Escreva seu Post", style: "display: block"%>
-    <%= form.rich_text_area :body %>
-  </div>
-  
+<div class="body">
+  <%= form.label :body, "Escreva seu Post", style: "display: block"%> <%=
+  form.rich_text_area :body %>
+</div>
 
-  <div>
-    <%= form.label :tag_list, "Tags (separadas por vírgulas)" %>
-    <%= form.text_field :tag_list %>
-  </div>
-  
-  <div class="btn-close">
-    <%= form.submit class: "btn btn-primary" %>
-  </div>
+<div>
+  <%= form.label :tag_list, "Tags (separadas por vírgulas)" %> <%=
+  form.text_field :tag_list %>
+</div>
+
+<div class="btn-close"><%= form.submit class: "btn btn-primary" %></div>
 <% end %>

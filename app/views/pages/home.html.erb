@@ -3,21 +3,6 @@
 
 
 <div class="container-mid">
-    <div class="search-container">
-        
-        <div class="search-icon">
-            <img src="https://icongr.am/entypo/magnifying-glass.svg?size=30&color=72bada" alt=""><span>Search</span>
-        </div>
-        
-        <input type="text">
-        <!-- <p>Fique por dentro das noticias, atualizações e dicas</p>  -->
-        <% if current_user && current_user.admin? %>
-        <%= link_to "Publicar ", new_post_path %>
-        <% else %>
-
-        <% end %>
-    </div>
-    
     
     
     <div id="posts" class="posts-container">

@@ -5,5 +5,5 @@ class Post < ApplicationRecord
     has_and_belongs_to_many :tags
     has_many :comments, dependent: :destroy
     has_rich_text :body
-
+    has_one_attached :image
 end
