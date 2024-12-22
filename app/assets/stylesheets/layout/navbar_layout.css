@@ -2,3 +2,25 @@
     margin: 0 100px;
     background-color: #18181800;
 }
+
+.container-fluid{
+    display: flex;
+    flex-wrap: inherit;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        gap: 100px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav, .navbar-expand-lg .navbar-nav{
+        flex-direction: row;
+        gap: 20px;
+    }
+}

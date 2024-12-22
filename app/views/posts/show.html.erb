@@ -1,5 +1,7 @@
 <%= stylesheet_link_tag('layout/show_layout') %>
 
+<div class="main-post-container">
+
 <div class="container-show">
 
 
@@ -17,7 +19,7 @@
     <% else %>
 
     <% end %>
-    
+     
 
   </div>
 
@@ -27,9 +29,6 @@
       <%= render 'comments/comment', post: @post, comment: comment %>
     <% end %>
   </div>
-
-
-
-
+</div>
 
 </div>
