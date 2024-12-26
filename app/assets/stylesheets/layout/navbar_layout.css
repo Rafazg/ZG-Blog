@@ -10,6 +10,20 @@
     align-items: center;
 }
 
+.zg{
+    font-family: fantasy;
+    font-size: xx-large;
+}
+
+.btn-primary{
+    background-color: #72bada;
+}
+
+.btn-outline-primary{
+    border-color: #72bada;
+    color: white;
+}
+
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-collapse {
         display: flex !important;
